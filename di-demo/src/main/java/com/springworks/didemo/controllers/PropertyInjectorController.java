@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 public class PropertyInjectorController {
     //Autowiring by name of bean.
     @Autowired
+    @Qualifier("greetingServiceImpl")
     public GreetingService greetingServiceImpl;
 
     public String sayHello(){

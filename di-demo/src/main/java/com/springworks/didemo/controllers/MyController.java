@@ -1,14 +1,23 @@
 package com.springworks.didemo.controllers;
 
+import com.springworks.didemo.services.GreetingService;
 import org.springframework.stereotype.Controller;
 
 @Controller
 /*This registers a bean with name "myController", same as class name but first letter small*/
 public class MyController {
 
-    public void hello(){
+    private GreetingService greetingService;
+    
+    public MyController(GreetingService greetingService) {
+        this.greetingService = greetingService;
+    }
+
+    public String hello(){
+
 
         System.out.println("Hello!!");
+        return greetingService.sayGreeting();
 
 
     }
