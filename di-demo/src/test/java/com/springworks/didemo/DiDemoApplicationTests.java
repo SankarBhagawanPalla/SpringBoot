@@ -1,10 +1,10 @@
-package io.javabrains;
+package com.springworks.didemo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CourseApiDataApplicationTests {
+class DiDemoApplicationTests {
 
     @Test
     void contextLoads() {

@@ -27,6 +27,7 @@ public class Publisher {
         this.state = state;
         this.zip = zip;
     }
+
     public Long getId() {
         return id;
     }

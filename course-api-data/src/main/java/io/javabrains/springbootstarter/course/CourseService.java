@@ -9,38 +9,38 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CourseService {
-	
-	@Autowired
-	private CourseRepository courseRepository;
-	 
-	 public List<Course> getAllCourses(String topicId){
-		 
-		 List<Course> courses = new ArrayList<>();
-		 courseRepository.findByTopicId(topicId).forEach(courses::add);
-		 return courses;
-	 }
-	 
-	public Course getCourse(String id){
-		 Course t =  courseRepository.findById(id).get();
-		 return t;
-	 }
 
-	public void addCourse(Course course) {
-		
-		courseRepository.save(course);
-		
-	}
+    @Autowired
+    private CourseRepository courseRepository;
 
-	public void updateCourse(Course course) {
-		
-		courseRepository.save(course);
-		
-	}
+    public List<Course> getAllCourses(String topicId) {
 
-	public void deleteCourse(String id) {
-		
-		courseRepository.deleteById(id);
-		
-	}
+        List<Course> courses = new ArrayList<>();
+        courseRepository.findByTopicId(topicId).forEach(courses::add);
+        return courses;
+    }
+
+    public Course getCourse(String id) {
+        Course t = courseRepository.findById(id).get();
+        return t;
+    }
+
+    public void addCourse(Course course) {
+
+        courseRepository.save(course);
+
+    }
+
+    public void updateCourse(Course course) {
+
+        courseRepository.save(course);
+
+    }
+
+    public void deleteCourse(String id) {
+
+        courseRepository.deleteById(id);
+
+    }
 
 }
