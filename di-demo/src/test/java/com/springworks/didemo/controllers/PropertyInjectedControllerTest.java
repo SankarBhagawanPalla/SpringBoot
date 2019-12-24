@@ -1,6 +1,6 @@
 package com.springworks.didemo.controllers;
 
-import com.springworks.didemo.services.GreetingServiceImpl;
+import com.service.services.GreetingServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
