@@ -1,4 +1,4 @@
-package com.springworks.didemo.DatasourceBean;
+package com.springworks.didemo.externalbeans;
 
 public class FakeDataSource {
 
