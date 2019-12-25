@@ -1,0 +1,5 @@
+test:
+  jms:
+    username: admin
+    password: password
+    url: active.mq

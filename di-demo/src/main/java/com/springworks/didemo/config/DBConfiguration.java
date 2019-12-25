@@ -10,10 +10,7 @@ import org.springframework.context.annotation.PropertySources;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 @Configuration
-@PropertySources({
-        @PropertySource("classpath:Datasource.properties"),
-        @PropertySource("classpath:jms.properties")
-})
+@PropertySource("classpath:Datasource.properties")
 public class DBConfiguration {
 
     @Value("${test.dburl}")
