@@ -9,6 +9,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.core.env.Environment;
 
 @SpringBootApplication
 @ComponentScan(basePackages = {"com.service", "com.springworks"})
@@ -19,6 +20,8 @@ public class DiDemoApplication {
         ApplicationContext ctx = SpringApplication.run(DiDemoApplication.class, args);
         MyController controller= (MyController) ctx.getBean("myController");
         FakeDataSource fakeDataSource = (FakeDataSource) ctx.getBean("fakeDataSource");
+        Environment env = (Environment) ctx.getBean("environment");
+        System.out.println(env.getProperty("COMPUTERNAME"));
         System.out.println(fakeDataSource.toString());
         System.out.println(controller.hello());
         System.out.println(ctx.getBean(PropertyInjectorController.class).sayHello());
