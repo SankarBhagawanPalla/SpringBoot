@@ -1,0 +1,36 @@
+package com.springworks.didemo.config;
+
+import com.springworks.didemo.DatasourceBean.FakeDataSource;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+
+@Configuration
+@PropertySource("classpath:Datasource.properties")
+public class DBConfiguration {
+
+    @Value("${test.dburl}")
+    private String dburl;
+    @Value("${test.username}")
+    private String username;
+    @Value("${test.password}")
+    private String password;
+
+    @Bean
+    public FakeDataSource fakeDataSource(){
+            FakeDataSource fakeDataSource = new FakeDataSource();
+            fakeDataSource.setDburl(dburl);
+            fakeDataSource.setUserName(username);
+            fakeDataSource.setPassword(password);
+            return fakeDataSource;
+    }
+
+    //This should be a static method
+    @Bean
+    public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer(){
+        return new PropertySourcesPlaceholderConfigurer();
+    }
+
+}

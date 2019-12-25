@@ -1,5 +1,6 @@
 package com.springworks.didemo;
 
+import com.springworks.didemo.DatasourceBean.FakeDataSource;
 import com.springworks.didemo.controllers.ConstructorInjectedController;
 import com.springworks.didemo.controllers.MyController;
 import com.springworks.didemo.controllers.PropertyInjectorController;
@@ -17,7 +18,8 @@ public class DiDemoApplication {
 
         ApplicationContext ctx = SpringApplication.run(DiDemoApplication.class, args);
         MyController controller= (MyController) ctx.getBean("myController");
-
+        FakeDataSource fakeDataSource = (FakeDataSource) ctx.getBean("fakeDataSource");
+        System.out.println(fakeDataSource.toString());
         System.out.println(controller.hello());
         System.out.println(ctx.getBean(PropertyInjectorController.class).sayHello());
         System.out.println(ctx.getBean(SetterInjectedController.class).sayHello());
